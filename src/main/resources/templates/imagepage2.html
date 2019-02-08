@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:th = "https://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{fonts/alphabetized-cassette-tapes/alphabetized cassette tapes.ttf}" />
+  <link rel="stylesheet" th:href="@{css/main.css}" />
+  <link rel="stylesheet" th:href="@{css/Animate.css}" />
+  <title>Stegno-bla-bla</title>
+</head>
+
+<body>
+
+  <section>
+    <div class="navbar-fixed">
+      <nav class="blue-grey lighten-5">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">
+              <i class="material-icons black-text">vpn_key</i>
+            </a>
+            <a href=" # " data-activates="mobile-demo" class="button-collapse left hide-on-med-and-up">
+              <i class="material-icons black-text">menu</i>
+            </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li>
+                <a href="#" class="black-text navtitles handwritten-head">images</a>
+              </li>
+              <li>
+                <a href="#" class="black-text navtitles handwritten-head">text</a>
+              </li>
+              <li>
+                <a href="#" class="black-text navtitles handwritten-head">audio</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    <ul class="side-nav" id="mobile-demo">
+      <div class="navstyle">
+        <li>
+          <a href="#" class="handwritten-head">images</a>
+        </li>
+        <li>
+          <a href="#" class="handwritten-head">text</a>
+        </li>
+        <li>
+          <a href="#" class="handwritten-head">audio</a>
+        </li>
+      </div>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="container">
+    <form th:action="@{/imagepage2}" method="post"
+				enctype="multipart/form-data">
+				
+			<input type="text" name="noofi" th:value = "${noofhi}">
+      <div class="row">
+        <div class="col s12 m8 l6 offset-m2 offset-l3 center">
+          <p class="handwritten"> your image </p>
+          
+           <div class = "audio">
+               <p class="btn green "> Selected </p>
+             <p class="handwritten-head center audiotext"></p>
+             </div>
+          
+          
+          <div class="drag_area handwritten">
+            Drag the images hear OR /
+            <div class="upload-btn-wrapper">
+              <button class="btn">
+                <i class="material-icons">add</i>
+              </button>
+              <input type="file" id="finput1" name="mainimage" accept="image/*" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m8 l6 offset-m2 offset-l3 center">
+            <p>
+                <input name="methodofhelper" value = "1" type="radio" id="test1" />
+                <label for="test1">use default images of server for helper images</label>
+              </p>
+              <p>
+                <input name="methodofhelper" value="2" type="radio" id="test2" onclick="opencar()" />
+                <label for="test2">choose your own images for helper images</label>
+              </p>
+
+              <ul class="collapsible" data-collapsible="accordion" hidden = "hidden">
+                  <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                    <div class="collapsible-body">
+                      
+                       <div class="file-field input-field" data-th-each = "noi : ${nohi}">
+                                    <div class="btn">
+                                      <span th:text = "${noi}+ ' ' +image"></span>
+                                      <input type="file" th:name = "image+${noi}" accept="image/*" >
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                      <input class="file-path validate" type="text">
+                                    </div>
+                       </div>
+                      
+                    </div>
+                  </li>
+                </ul>
+                
+                <p>
+                <input name="email" id="email" type = "email" />
+                <label for="email">enter your email id</label>
+              </p>
+                
+                      
+        </div>
+      </div>
+  
+      <div class = "row" style= "margin-top:50px;">
+        <div class = "col s12 m8 l6 offset-m2 offset-l3 right">
+          <input type = "submit" class="btn waves-effect" />
+        </div>
+      </div>
+
+      </form>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js "></script>
+  <script language="javascript" type="text/javascript" src="io.js"></script>
+  <script>
+  
+  function fun()
+  {
+
+   
+    if($('#finput1').val != null)
+    {
+      var file = $('#finput1').val();
+
+      $('.drag_area').hide();
+      $('.audio').show();
+      $('.audiotext').text(file);
+    }
+  }
+  
+    $(document).ready(function () {
+    	$('.audio').hide();
+      
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+          
+  $('#test2').click(function() {
+      $('.collapsible').removeAttr("hidden");
+      $('.collapsible').collapsible('open', 0);
+    });
+
+
+      $(".button-collapse ").sideNav();
+      //console.log("hey");
+      $('.drag_area').on('dragover', function () {
+        $(this).addClass('file_drag_over');
+        //console.log('hii');
+        return false;
+      }).on('dragleave', function () {
+        $(this).removeClass('file_drag_over');
+        return false;
+      });
+
+      $('.drag_area').on('drop', function (e) {
+        e.preventDefault();
+        $(this).removeClass('file_drag_over');
+
+        var formdata = new FormData();
+        var files_list = e.originalEvent.dataTransfer.files;
+        console.log(files_list);
+
+        for (var i = 0; i < files_list; i++) {
+          formdata.append('file[]', files_list[i]);
+        }
+        console.log(formdata);
+      });
+    });
+  </script>
+</body>
+
+</html>

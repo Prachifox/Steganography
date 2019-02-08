@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th = "https://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" th:href="@{fonts/alphabetized-cassette-tapes/alphabetized cassette tapes.ttf}" />
+  <link rel="stylesheet" th:href="@{css/main.css}" />
+  <title>Stegno-bla-bla</title>
+</head>
+
+<body>
+
+  <section>
+    <div class="navbar-fixed">
+      <nav class="blue-grey lighten-5">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">
+              <i class="material-icons black-text">vpn_key</i>
+            </a>
+            <a href=" # " data-activates="mobile-demo" class="button-collapse left hide-on-med-and-up">
+              <i class="material-icons black-text">menu</i>
+            </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+             <li class = "handwritten-head black-text">StegnoGraphy</li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center">
+      <div class="row">
+        <div class="col s12 l4 m4">
+          <h3 class="handwritten-head">
+            Text->>Image
+          </h3>
+          <p class="handwritten lessgap">
+            Text Hide inside Image
+          </p>
+          <a class="btn-floating btn-large waves-effect waves-light blue-grey lighten-5 tooltipped" th:href = "@{/Textinimages}" data-position="right" data-tooltip="have a look">
+            <i class="material-icons black-text">arrow_forward_ios</i>
+          </a>
+        </div>
+    
+        <div class="col s12 l4 m4 ">
+          <h3 class="handwritten-head">
+            Image->>Image
+          </h3>
+          <p class="handwritten lessgap">
+            Images hide inside images
+          </p>
+          <a class="btn-floating btn-large waves-effect waves-light blue-grey lighten-5 tooltipped" th:href = "@{/images}" data-position="right" data-tooltip="have a look">
+            <i class="material-icons black-text">arrow_forward_ios</i>
+          </a>
+        </div>
+        <div class="col s12 l4 m4 ">
+          <h3 class="handwritten-head">
+            Texttt->>Audio
+          </h3>
+          <p class="handwritten lessgap">
+            Text hide inside AudioFile
+          </p>
+          <a class="btn-floating btn-large waves-effect waves-light blue-grey lighten-5 tooltipped" th:href = "@{/audio}" data-position="right" data-tooltip="have a look">
+            <i class="material-icons black-text">arrow_forward_ios</i>
+          </a>
+        </div>
+      </div>
+     
+    </div>
+    </div>
+   
+    </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+  <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js "></script>
+  <script>
+    $(document).ready(function () {
+      $(".button-collapse ").sideNav();
+    });
+  </script>
+</body>
+
+</html>

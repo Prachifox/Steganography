@@ -1,0 +1,62 @@
+body {
+  user-select: none;
+}
+@font-face {
+  font-family: 'handwritten';
+  src: url('/fonts/alphabetized-cassette-tapes/alphabetized\ cassette\ tapes.ttf');
+}
+@font-face {
+  font-family: 'handwritten-head';
+  src: url('/fonts/attack-of-the-cucumbers/attack\ of\ the\ cucumbers.ttf');
+}
+.navstyle {
+  margin-top: 20px !important;
+}
+
+.navtitles {
+  margin-left: 20px !important;
+}
+
+.mycont {
+  margin: 0 5%;
+}
+
+.handwritten {
+  font-family: handwritten;
+  font-size: 30px;
+}
+
+.handwritten-head {
+  font-family: handwritten-head;
+}
+
+.lessgap {
+  margin: 10px !important;
+}
+
+.drag_area {
+  width: 100%;
+  padding: 100px 50px;
+  border: 2px dashed #ccc;
+  text-align: center;
+  font-size: 24px;
+}
+
+.file_drag_over {
+  color: #000;
+  border-color: #000;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type='file'] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
